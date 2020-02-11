@@ -54,7 +54,7 @@ h1 {
 }
 
 #decline {
-  background-color: #888;
+  background-color: #aaa;
 }
 
 
@@ -100,7 +100,73 @@ svg {
 }
 
 .page-content {
-    animation-delay: 3.5s;
+    /* animation-delay: 3.5s; */
+}
+
+.profile {
+  position: absolute; 
+  top: 0;
+  background-color: #aaa;
+  height: 250px;
+  width: 100%;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.profile img {
+  width: 150px;
+  border-radius: 50%;
+  padding-bottom: 25px;
+}
+
+.sidebar-links {
+  padding-top: 50px;
+  position: absolute;
+  top: 300px;
+}
+
+.sidenav {
+  height: 100vh; 
+  width: 0px;
+  position: fixed;
+  z-index: 99999; 
+  top: 0; 
+  left: 0;
+  background-color: #111; 
+  overflow-x: hidden; 
+  padding-top: 60px; 
+  transition: 0.5s;
+}
+
+.sidenav svg {
+  fill: #FFB72E;
+}
+
+.sidenav.opennav {
+  width: 250px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 1.5em;
+  color: #aaa;
+  display: block;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 36px;
+  margin-left: 40px;
+  color: black;
 }
 
 /*****
