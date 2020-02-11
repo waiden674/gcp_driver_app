@@ -108,7 +108,7 @@ svg {
   top: 0;
   background-color: #aaa;
   height: 250px;
-  width: 100%;
+  width: 250px;
   text-align: center;
   padding-top: 50px;
 }
@@ -135,7 +135,7 @@ svg {
   background-color: #111; 
   overflow-x: hidden; 
   padding-top: 60px; 
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .sidenav svg {
@@ -152,7 +152,7 @@ svg {
   font-size: 1.5em;
   color: #aaa;
   display: block;
-  transition: 0.3s;
+  transition: 1.5s;
   font-weight: 600;
 }
 
