@@ -5,15 +5,30 @@ body {
     overflow: hidden;
 }
 
+header {
+  font-family: 'Work Sans', sans-serif;
+  background-color: #FFB72E;
+  position: relative;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3%;
+}
+
+header p {
+  text-transform: uppercase;
+  font-weight: lighter;
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
 h1 {
-    font-family: 'Work Sans', sans-serif;
-    background-color: #FFB72E;
     text-align: center;
     font-size: 3em;
     font-weight: 800;
-    padding: 25px 0;
-    position: relative;
-    top: 0;
+    padding: 25px 0; 
     letter-spacing: 3px;
 }
 
