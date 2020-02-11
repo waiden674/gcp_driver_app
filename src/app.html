@@ -1,3 +1,31 @@
 <template>
-  <h1>${message}</h1>
+  <require from="style.css"></require>
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:600,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+  <div>
+  <div id="loading">
+    <p class="animated fadeIn">REBU</p>
+    <div class="lds-facebook animated fadeIn"><div></div><div></div><div></div></div>
+  </div>
+</div>
+
+<div class="page-content animated fadeIn">
+  <h1>REBU</h1>
+
+  <div id="map">
+    <iframe src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=45.346056999999995,-75.9266018&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+  </div>
+  
+<div id="buttons">
+    <button id="accept">
+      Accept
+    </button>
+    <button id="decline">
+        Decline
+    </button>
+</div>
+  
+</div>
+  
 </template>
