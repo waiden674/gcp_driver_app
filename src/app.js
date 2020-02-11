@@ -22,7 +22,7 @@ export class App {
         .withDefaults({
           credentials:'same-origin',
           headers: {
-            'Authorization': 'Bearer ya29.Iq8BvQf-zcFf0tm-zJgavtQWPfzhP48BECopxe_ijavqrUFM6tJ6fkriA0YV8d7Yd6keqjIsrMJ1mHNqTlihN0QjG31wDV0KB07i-pnjKO3z7I_TlhwZPFUJFCCKfdPyvwGxrxn-me_0MH8njdve-WxllUgQBNpYt0y9hr9Iy5J97L-_KzxaUFVDMHs2RJnfPMz8YECdBq1Yt3xUegi9MG7-LyfZWfVpyjr2obx4mcA_8Q',
+            'Authorization': 'Bearer ya29.Iq8BvQfdhEYQ9Kg6MJgTIiaxNqD6o6RPBFfYXh8XASaYRSaprStfAhjoPtavvAPsAs-GZ1zwfw3C39tafvl1EZGLUFalnVfJT4Dc5bitOtWQyW4AZVeScc9_o5ZT2nxS4-lSvhfWerGN3JshBfxVzgSKfLS34WPlHnLNO7SO_dsFgJPhUzvAmabngIJnymQslp4rjzPv1e-ioVYIsvfMew3XkqM8Wked1-byeC7JKuEpyA',
             'Accept' : 'application/json',
             'X-Requested-With' : 'Fetch'
           }
@@ -89,7 +89,7 @@ export class App {
             "value": "en",
             "Type": "Driver-Ride-Accepted"
           },
-          "data": btoa("Request"),
+          "data": "ewoJInBhc3Nlbmdlck5hbWUiOiJUb21teSIsCgkiZHJpdmVyTmFtZSI6IkphY2siLAoJInJlcXVlc3RUeXBlIjoiZHJpdmVyIHJpZGUgYWNjZXB0ZWQiLAoJIm1zZyI6IkkgbmVlZCBhIHJpZGVzaGFyZS4iCn0=",
         }
       ]
     }
@@ -102,5 +102,6 @@ export class App {
 
   declineRequest(){
     document.getElementById("buttons").style.bottom = "-100px";
+    this.pullMessage();
   }
 }
