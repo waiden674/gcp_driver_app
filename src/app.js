@@ -3,6 +3,13 @@ import { inject } from "aurelia-framework";
 
 @inject(HttpClient)
 export class App {
+
+  message = 'Hello World!';
+  expanded = false;
+
+  open() {
+    this.expanded = !this.expanded;
+  }
   
   constructor(httpClient) {
     this.btnStr = 'Request REBU Driver';

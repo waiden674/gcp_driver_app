@@ -10,17 +10,39 @@
   </div>
 </div> -->
 
-<div class="page-content ">
-  <header>
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
-  <h1>REBU</h1>
-  <button click.trigger="pullMessage()">Pull</button>
-</header>
 
-  <div id="map">
-    <iframe src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=45.346056999999995,-75.9266018&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+<div class.bind="expanded ? 'sidenav opennav' : 'sidenav'"> 
+  <div class="profile">
+    <a class="closebtn" click.delegate="open()">&times;</a>
+    <img src="https://akns-images.eonline.com/eol_images/Entire_Site/2011520/300.gosling.cm.62011.jpg?fit=inside|900:auto&output-quality=90">
+    <h2>Driver McDriver</h2>
+    <div class="stars">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524v-12.005zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"/></svg>
+    </div>
   </div>
-  
+  <div class="sidebar-links">
+  <a href="#">Settings</a>
+  <a href="#">Profile</a>
+  <a href="#">Help</a>
+  </div>
+</div>
+
+<div class="page-content animated fadeIn">
+  <header>
+    <svg click.delegate="open()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="open"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
+    <h1>REBU</h1>
+    <p>Driver</p>
+  </header>
+
+    <div id="map">
+      <iframe src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=45.346056999999995,-75.9266018&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+    </div>
+    
+
 <div id="buttons">
     <button id="accept" click.trigger="acceptRequest()">
       Accept
@@ -30,6 +52,7 @@
     </button>
 </div>
   
+
 </div>
-  
+
 </template>
