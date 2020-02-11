@@ -11,11 +11,11 @@ export class App {
     this.httpClient = httpClient;
     this.httpClient.configure(config => {
       config
-        .withBaseUrl('https://pubsub.googleapis.com/v1/projects/stellar-arcadia-205014/subscriptions/')
+        .withBaseUrl('https://pubsub.googleapis.com/v1/projects/stellar-arcadia-205014/')
         .withDefaults({
           credentials:'same-origin',
           headers: {
-            'Authorization': 'Bearer ya29.Iq8BvQcvu4ymbxRaiyS_gxlFB23jgHS3al-2-hss1Ayijv7w3LltvVYE8mqd9Z2qY-tPkh1P3vdOGSAYpcxKCwuBatCjZr3pIHZfno5pVJ-rzYghACZwpkjM1Hl0hnCOR2ZhltBak33pM0vo9pIPNrw1M2mllEFrthPHuuMFWMM8we9qus00cZiIesufqi24O6BfYhaRj8jq3zpOh-G6y7BT4BOTVzhcjL6f0Y1HKzSJcA',
+            'Authorization': 'Bearer ya29.Iq8BvQcFIPXyvsngC_fhbeCmFJBLhVnxoBVG8BCFKk9g49T8U8_NtM3sIHVo8zSlTaUH8ueeZEYcufdIRebEfcwJhePTk2dynWfc7rLYp0hVUO2H1jCLaNdb8LXoOHJAHfJLXGNq-A9Uxa-35b-TkQwpWPtffCdmkPKd10DsCryhd2mtb335sH6YwJn0kFSLpBzxOjLw0n-MX5CgiTjftjkphGrVpIDIHxczJu7oCnO8fw',
             'Accept' : 'application/json',
             'X-Requested-With' : 'Fetch'
           }
@@ -33,26 +33,67 @@ export class App {
     });
   }
 
+  activate(){
+    this.pullMessage()
+  }
+
   pullMessage(){
     let message = {
       "returnImmediately" : false,
       "maxMessages": 10
     };
     this.httpClient
-      .fetch("acme-rideshare-driver-requested-subscription:pull",{
+      .fetch("subscriptions/acme-rideshare-driver-requested-subscription:pull",{
         method: 'post',
         body: json(message)
       })
       .then(response => {
-        let receivedMsg = response.json();
-        if(receivedMsg){
-          acknoledge(receivedMsg.ackId);
-          document.getElementById("buttons").style.bottom="10px";   
-        }
+        response.json().then(data => {
+          if(data.receivedMessages){
+            this.acknowledge(data.receivedMessages[0].ackId);
+            document.getElementById("buttons").style.bottom = "10px";
+          }else{
+            console.log("Pulling Again")
+            this.pullMessage()
+          }
+        })
+      })
+      
+  }
+
+  acknowledge(ackId){
+    console.log("acknowledged ID: "+ ackId)
+    let message = {
+      "ackIds": [ackId]
+    }
+    this.httpClient
+      .fetch("subscriptions/acme-rideshare-driver-requested-subscription:acknowledge",{
+        method: 'post',
+        body: json(message)
       })
   }
 
-  acknoledge(ackId){
+  acceptRequest(){
+    let message = {
+      "messages": [
+        {
+          "attributes": {
+            "key": "iana.org/language_tag",
+            "value": "en",
+            "Type": "Driver-Ride-Accepted"
+          },
+          "data": btoa("Request"),
+        }
+      ]
+    }
+    this.httpClient
+      .fetch("topics/acme-rideshare-driver-accepted-topic:publish",{
+        method: 'post',
+        body: json(message)
+      })
+  }
 
+  declineRequest(){
+    document.getElementById("buttons").style.bottom = "-100px";
   }
 }

@@ -3,18 +3,18 @@
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:600,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-  <div>
+  <!-- <div>
   <div id="loading">
     <p class="animated fadeIn">REBU</p>
     <div class="lds-facebook animated fadeIn"><div></div><div></div><div></div></div>
   </div>
-</div>
+</div> -->
 
-<div class="page-content animated fadeIn">
+<div class="page-content ">
   <header>
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
   <h1>REBU</h1>
-  <p>Driver</p>
+  <button click.trigger="pullMessage()">Pull</button>
 </header>
 
   <div id="map">
@@ -22,10 +22,10 @@
   </div>
   
 <div id="buttons">
-    <button id="accept">
+    <button id="accept" click.trigger="acceptRequest()">
       Accept
     </button>
-    <button id="decline">
+    <button id="decline" click.trigger="declineRequest()">
         Decline
     </button>
 </div>
