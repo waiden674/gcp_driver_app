@@ -22,7 +22,7 @@ export class App {
         .withDefaults({
           credentials:'same-origin',
           headers: {
-            'Authorization': 'Bearer ya29.Iq8BvQcFIPXyvsngC_fhbeCmFJBLhVnxoBVG8BCFKk9g49T8U8_NtM3sIHVo8zSlTaUH8ueeZEYcufdIRebEfcwJhePTk2dynWfc7rLYp0hVUO2H1jCLaNdb8LXoOHJAHfJLXGNq-A9Uxa-35b-TkQwpWPtffCdmkPKd10DsCryhd2mtb335sH6YwJn0kFSLpBzxOjLw0n-MX5CgiTjftjkphGrVpIDIHxczJu7oCnO8fw',
+            'Authorization': 'Bearer ya29.Iq8BvQf-zcFf0tm-zJgavtQWPfzhP48BECopxe_ijavqrUFM6tJ6fkriA0YV8d7Yd6keqjIsrMJ1mHNqTlihN0QjG31wDV0KB07i-pnjKO3z7I_TlhwZPFUJFCCKfdPyvwGxrxn-me_0MH8njdve-WxllUgQBNpYt0y9hr9Iy5J97L-_KzxaUFVDMHs2RJnfPMz8YECdBq1Yt3xUegi9MG7-LyfZWfVpyjr2obx4mcA_8Q',
             'Accept' : 'application/json',
             'X-Requested-With' : 'Fetch'
           }
